@@ -1,0 +1,159 @@
+/* Container for the list of user cards */
+.user-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Styling for each user card */
+  .user-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 200px;
+  }
+  
+  /* Add a slight lift effect on hover */
+  .user-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Avatar image styling */
+  .user-avatar {
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
+    margin-bottom: 15px;
+  }
+  
+  /* User information styling */
+  .user-info {
+    text-align: center;
+  }
+  
+  .user-info h4 {
+    font-size: 18px;
+    margin: 10px 0 5px 0;
+    color: #333;
+  }
+  
+  .user-info p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+  }
+
+
+  @media (max-width: 768px) {
+    .user-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .user-card {
+      width: 90%;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .user-list {
+      justify-content: space-between;
+    }
+  
+    .user-card {
+      width: 45%;
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .user-card {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  /* Pagination container styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  
+  /* Pagination buttons styling */
+  .pagination button {
+    background-color: #007bff; /* Primary color */
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Button hover effect */
+  .pagination button:hover {
+    background-color: #0056b3; /* Darker shade for hover */
+    transform: translateY(-2px); /* Slight lift effect */
+  }
+  
+  /* Disabled button styling */
+  .pagination button:disabled {
+    background-color: #cccccc; /* Grey out disabled button */
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Current page indicator styling */
+  .pagination span {
+    font-size: 16px;
+    color: #333;
+  }
+
+  @media (max-width: 600px) {
+    .pagination {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .pagination button {
+      width: 100%;
+      padding: 8px;
+    }
+  
+    .pagination span {
+      font-size: 14px;
+    }
+  }
+
+  
+  .pagination button span {
+    margin-right: 5px;
+  }
+  
+  .pagination button:last-child span {
+    margin-right: 0;
+    margin-left: 5px;
+  }
+  
+  

@@ -1,0 +1,9 @@
+<div *ngIf="user" class="card mt-4" style="width: 18rem;">
+    <img [src]="user.avatar" alt="User Avatar" />
+    <div class="card-body">
+    <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+    <p>Email: {{ user.email }}</p>
+    <button class="btn btn-primary" (click)="goBack()">Back</button>
+    </div>
+  </div>
+
