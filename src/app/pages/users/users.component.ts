@@ -4,6 +4,8 @@ import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import { SeoService } from '../services/seo.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-users',
@@ -23,7 +25,10 @@ export class UsersComponent implements OnInit {
      private router: Router,
      private http: HttpClient,
      private route: ActivatedRoute,
-     private cdr: ChangeDetectorRef
+     private cdr: ChangeDetectorRef,
+     private seoService: SeoService,
+     private meta: Meta,
+     private title: Title
     
     ) {}
 
@@ -38,6 +43,14 @@ export class UsersComponent implements OnInit {
   // }
 
   ngOnInit(): void {
+    // this.seoService.generateTage({
+    //   title: 'Users Page',
+    //   description: 'This is our users and clients page'
+    // });
+    
+    this.title.setTitle('users page');
+    this.meta.updateTag({name: 'description', content: 'This is our users and clients pagesss'});
+
     this.route.params.subscribe((params) => {
       this.searchName = params['name'] ? params['name'].toLowerCase() : '';
       console.log(this.searchName); // Check if the search name is correct
